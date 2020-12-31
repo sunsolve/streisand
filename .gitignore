@@ -18,3 +18,4 @@ streisand-diagnostics.md
 # We recommend people use a Python virtualenv, and document this as
 # the location.
 venv/
+.python-version

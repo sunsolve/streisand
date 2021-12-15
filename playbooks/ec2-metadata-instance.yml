@@ -1,6 +1,6 @@
 ---
 - name: Drop packets to the Amazon EC2 metadata instance
-  hosts: streisand-host
+  hosts: streisand_host
   gather_facts: no
 
   remote_user: "root"

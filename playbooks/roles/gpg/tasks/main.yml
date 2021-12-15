@@ -52,7 +52,7 @@
 
 - name: "Wait for the GPG agent and dirmngr control sockets"
   wait_for:
-    path: "{{ root_gpg_dir }}/{{ item }}"
+    path: "{{ gpg_run_dir }}/{{ item }}"
     state: present
     sleep: 5
     timeout: 60
@@ -69,6 +69,7 @@
   copy:
     src: "{{ item }}"
     dest: "{{ streisand_gpg_dir }}/keys/{{ item }}"
+    force: no
   with_items: "{{ streisand_bootstrap_gpg_keys }}"
 
 - name: "Import the bootstrap GPG public keys to the Streisand GPG keyring"
@@ -85,7 +86,9 @@
   # in the repo become too stale to be used without successsful refresh the
   # maintainers will notice failed builds and fix them by refreshing their own
   # keyrings and updating the static repo keys until the build passes again.
-  when: not streisand_ci
+  when:
+    - not streisand_ci
+    - not fuck_hkps
 
 - name: "Set up a daily cronjob to refresh the Streisand GPG keyring"
   template:

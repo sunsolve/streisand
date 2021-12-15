@@ -105,7 +105,7 @@ export INVENTORY="${PROJECT_DIR}/inventories/inventory-existing"
 cat > "${INVENTORY}" <<EOF
 [localhost]
 localhost ansible_connection=local ansible_python_interpreter=python
-[streisand-host]
+[streisand_host]
 ${IP_ADDRESS} ansible_user=${SSH_USER}
 EOF
 

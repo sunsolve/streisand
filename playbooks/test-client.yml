@@ -1,7 +1,7 @@
 ---
 - name: Configure the client server for Ansible
 # =========================================
-  hosts: streisand-client
+  hosts: streisand_client
   gather_facts: no
   remote_user: "root"
   become: true
@@ -13,7 +13,7 @@
         executable: /bin/bash
 
 - name: Configure the client server as a Streisand test client
-  hosts: streisand-client
+  hosts: streisand_client
   remote_user: "root"
   become: true
   roles:

@@ -175,7 +175,7 @@ Please enter the word 'streisand' to continue: "
   read -r -d '' TEMPL << EOF || true
 [localhost]
 localhost ansible_connection=local ansible_python_interpreter=python3
-[streisand-host]
+[streisand_host]
 $SERVER_IP ansible_user=$SSH_USER
 EOF
 

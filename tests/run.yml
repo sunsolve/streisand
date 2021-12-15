@@ -41,7 +41,7 @@
     - name: Create the in-memory inventory group
       add_host:
         name: "{{ ansible_default_ipv4.address }}"
-        groups: streisand-host
+        groups: streisand_host
         ansible_ssh_private_key_file: "/tmp/id_rsa_insecure"
 
     - name: Set the streisand_ipv4_address variable

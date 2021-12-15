@@ -10,7 +10,7 @@
 
 - name: Prepare the localhost for Streisand
 # =========================================
-  hosts: streisand-host
+  hosts: streisand_host
   remote_user: "root"
   become: true
 

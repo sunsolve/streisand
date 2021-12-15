@@ -41,7 +41,7 @@
 - name: Create the in-memory inventory group
   add_host:
     name: "{{ streisand_ipv4_address }}"
-    groups: streisand-host
+    groups: streisand_host
     ansible_user: ubuntu
     ansible_become: yes
 

@@ -36,6 +36,7 @@
         wait: yes
         oauth_token: "{{ do_access_token }}"
         state: present
+        wait_timeout: 300
       register: streisand_server
   rescue:
     - fail:
@@ -51,7 +52,7 @@
 - name: Create the in-memory inventory group
   add_host:
     name: "{{ streisand_server.data.ip_address }}"
-    groups: streisand-host
+    groups: streisand_host
 
 - name: Set the streisand_ipv4_address variable
   set_fact:

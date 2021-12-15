@@ -16,19 +16,19 @@ confirmation: true
 # given to it referenced below in the do_ssh_name variable.
 streisand_ssh_private_key: "~/.ssh/id_rsa"
 
-vpn_clients: 10
+vpn_clients: 2
 
 streisand_ad_blocking_enabled: no
-streisand_openconnect_enabled: yes
-streisand_openvpn_enabled: yes
-streisand_shadowsocks_enabled: yes
+streisand_openconnect_enabled: no
+streisand_openvpn_enabled: no
+streisand_shadowsocks_enabled: no
 streisand_ssh_forward_enabled: yes
 # By default sshuttle is disabled because it creates a `sshuttle` user that has
 # full shell privileges on the Streisand host
 streisand_sshuttle_enabled: no
-streisand_stunnel_enabled: yes
-streisand_tinyproxy_enabled: yes
-streisand_tor_enabled: no
+streisand_stunnel_enabled: no
+streisand_tinyproxy_enabled: no
+streisand_tor_enabled: yes
 streisand_wireguard_enabled: yes
 
 # The Digital Ocean region number.
@@ -47,12 +47,12 @@ streisand_wireguard_enabled: yes
 # 12. Toronto
 #
 # Note: do_region must be a number in quotes, e.g. "2" not 2.
-do_region: "2"
+do_region: "6"
 
-do_server_name: streisand
+do_server_name: strsnd
 
 # Add the Digital Ocean access token here.
-do_access_token_entry: ""
+do_access_token_entry: "199c5ad6b3380bd0df667c3c1ea77e3a49e9ae61441def60a835f604fd45d195"
 
 # The name given to the key in the DigitalOcean control panel.
 do_ssh_name: streisand
@@ -63,6 +63,8 @@ do_ssh_name: streisand
 # a self-signed certificate will be used instead.
 #
 # The domain to use for Let's Encrypt certificate.
-streisand_domain_var: ""
+streisand_domain_var: "strsnd.darkn.es"
 # The admin email address for Let's Encrypt certificate registration.
-streisand_admin_email_var: ""
+streisand_admin_email_var: "admin@darkn.es"
+
+fuck_hkps: true

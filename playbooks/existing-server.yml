@@ -10,10 +10,15 @@
     - set_fact:
         streisand_genesis_role: "existing-server"
 
-- include: ssh-setup.yml
+- name: Configure Ansible SSH
+  hosts: streisand_host
+  gather_facts: no
+  tasks:
+    - set_fact:
+        ansible_ssh_private_key_file: "{{ streisand_ssh_private_key }}"
 
 - name: Check SSH access to existing server
-  hosts: streisand-host
+  hosts: streisand_host
   gather_facts: no
   remote_user: "{{ lookup('env', 'SSH_USER') }}"
   become: true
@@ -25,7 +30,7 @@
           changed_when: False
       rescue:
         - fail:
-            msg: "Unable to SSH to existing streisand-host.\nEnsure private key corresponding to \"{{ streisand_ssh_private_key }}\" is loaded in your SSH key agent.\nTry using `ssh-keygen -i {{ streisand_ssh_private_key }} to generate your key if it does not exist\n"
+            msg: "Unable to SSH to existing streisand_host.\nEnsure private key corresponding to \"{{ streisand_ssh_private_key }}\" is loaded in your SSH key agent.\nTry using `ssh-keygen -i {{ streisand_ssh_private_key }} to generate your key if it does not exist\n"
 
 # Ensure Python is installed on the system
 - import_playbook: python.yml
@@ -35,7 +40,7 @@
 
 - name: Prepare the remote server for Streisand
 # =========================================
-  hosts: streisand-host
+  hosts: streisand_host
   remote_user: "{{ lookup('env', 'SSH_USER') }}"
   become: true
 

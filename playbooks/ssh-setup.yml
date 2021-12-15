@@ -1,6 +1,6 @@
 ---
 - name: Configure Ansible SSH
-  hosts: streisand-host
+  hosts: streisand_host
   gather_facts: no
   tasks:
     - set_fact:

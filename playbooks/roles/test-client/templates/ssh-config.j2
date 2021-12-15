@@ -1,6 +1,6 @@
 # Connection profile for a SOCKS proxy over a SSH connection to the forward user
 # on a Streisand server instance
-Host streisand-host
+Host streisand_host
   HostName     {{ streisand_ip }}
   # Open a SOCKS proxy port equivalent to using `-D {{ forward_socks_port }}` on
   # the command line
@@ -8,7 +8,7 @@ Host streisand-host
 
 # Connection profile for using the TinyProxy HTTP(S) proxy over SSH to the
 # Streisand server instance
-Host streisand-host-tinyproxy
+Host streisand_host-tinyproxy
   HostName     {{ streisand_ip }}
   # Forward port {{ tinyproxy_remote_port }} on the streisand_ip host to port 
   # {{ tinyproxy_local_port }} localhost. This  makes TinyProxy (bound to

@@ -11,7 +11,7 @@
 
 - name: Configure the Server and install required software
 # ========================================================
-  hosts: streisand-host
+  hosts: streisand_host
 
   remote_user: "root"
   become: true

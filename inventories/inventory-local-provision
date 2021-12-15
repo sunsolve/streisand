@@ -10,7 +10,7 @@
 localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python
 
 # Settings for the Streisand host that will be provisioned
-[streisand-host]
+[streisand_host]
 # If you need to override the name of the server (e.g. because the system
 # hostname is not the desired server name for documentation/etc) then add a host
 # var named "streisand_server_name" with the desired value.

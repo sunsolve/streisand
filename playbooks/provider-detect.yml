@@ -5,7 +5,7 @@
 # provisioning in place of one of the geneiss roles.
 - name: Try to detect Cloud providers for specific overrides
 # =========================================
-  hosts: streisand-host
+  hosts: streisand_host
 
   remote_user: "root"
   become: true

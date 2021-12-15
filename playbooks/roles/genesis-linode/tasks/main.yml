@@ -28,7 +28,7 @@
 - name: "Create the in-memory inventory group"
   add_host:
     name: "{{ streisand_server.instance.ipv4[0] }}"
-    groups: streisand-host
+    groups: streisand_host
 
 - name: "Set the streisand_ipv4_address variable"
   set_fact:

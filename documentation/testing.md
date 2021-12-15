@@ -52,19 +52,19 @@ Local Testing
 ==========================
 
 For local testing Streisand includes a `Vagrantfile` that creates two virtual
-machines: `streisand-host` and `streisand-client`.
+machines: `streisand_host` and `streisand_client`.
 
-The `streisand-host` machine is provisioned with the standard Streisand
+The `streisand_host` machine is provisioned with the standard Streisand
 playbooks and replicates a Streisand server created with a cloud provider, but
 running on your local computer.
 
-Note that a throwaway SSH key pair is created in the `streisand-host` virtual
+Note that a throwaway SSH key pair is created in the `streisand_host` virtual
 machine in the location specified in the Anisible variable
 `streisand_ssh_private_key`. This is not needed to SSH into the virtual machine
-using `vagrant ssh streisand-host` and is only used by the provisioning process.
+using `vagrant ssh streisand_host` and is only used by the provisioning process.
 
-The `streisand-client` machine is provisioned specifically to act as a client of
-the `streisand-host`. It connects to the `streiand-host`'s HTTPS gateway to
+The `streisand_client` machine is provisioned specifically to act as a client of
+the `streisand_host`. It connects to the `streiand-host`'s HTTPS gateway to
 download client configuration files that are used by test scripts to ensure that
 services work "end-to-end".
 
@@ -76,7 +76,7 @@ Using Vagrant for Local Testing
 
        git clone https://github.com/StreisandEffect/streisand.git && cd streisand
 3. If this is your first time following these steps, create & start the
-   `streisand-host` and `streisand-client` virtual machines with:
+   `streisand_host` and `streisand_client` virtual machines with:
 
        `vagrant up`
 4. To re-run the Streisand playbooks, the virtual machines can be re-provisioned
@@ -89,7 +89,7 @@ Remote Testing
 
 For testing an existing Streisand server there is a `Vagrantfile.remotetest`
 Vagrantifle. As compared to the stock `Vagrantfile` for local testing the
-`Vagrantfile.remotetest` Vagrantfile does not include a `streisand-host`
+`Vagrantfile.remotetest` Vagrantfile does not include a `streisand_host`
 machine. This remotetest variant is useful to "smoke test" an existing
 Streisand server, or to provide end-to-end testing of a cloud provisioner.
 
@@ -116,7 +116,7 @@ Using Vagrant for Remote Testing (Hard Way)
 4. Create the `generated-docs/gateway-password.txt` file with the gateway
    password of the Streisand server
 5. If this is your first time following these steps, create & start the
-   `streisand-client` virtual machine with:
+   `streisand_client` virtual machine with:
 
        VAGRANT_VAGRANTFILE=Vagrantfile.remotetest vagrant up
 4. To re-run the Streisand playbooks, the virtual machines can be re-provisioned

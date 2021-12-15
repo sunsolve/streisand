@@ -41,7 +41,7 @@
   block:
     - name: "Start an SSH connection with dynamic port forwarding"
       shell: >
-        nohup ssh streisand-host -N -T & \
+        nohup ssh streisand_host -N -T & \
         echo $! > {{ ssh_pid_file }}
       args:
         creates: "{{ ssh_pid_file }}"
@@ -82,7 +82,7 @@
 
     - name: "Start an SSH connection with TinyProxy's port forwarded"
       shell: >
-        nohup ssh streisand-host-tinyproxy -N -T & \
+        nohup ssh streisand_host-tinyproxy -N -T & \
         echo $! > {{ ssh_pid_file }}
       args:
         creates: "{{ ssh_pid_file }}"

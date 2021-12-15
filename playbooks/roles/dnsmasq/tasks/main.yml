@@ -25,6 +25,18 @@
     dest: "{{ dnsmasq_systemd_service_path }}/10-restart-failure.conf"
     mode: 0644
 
+- name: stop systemd-resolved.service
+  systemd:
+    name: systemd-resolved.service
+    enabled: no
+    state: stopped
+
+- name: modify resolv.conf
+  ansible.builtin.template:
+    dest: /etc/resolv.conf
+    src: resolv.conf.j2
+    mode: 0644
+
 - name: Enable the dnsmasq service
   systemd:
     daemon_reload: yes

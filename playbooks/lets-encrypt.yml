@@ -5,7 +5,7 @@
 # certificates are generated and used instead.
 - name: Collect information about the Streisand domain
 # =========================================
-  hosts: streisand-host
+  hosts: streisand_host
   gather_facts: no
 
   vars_files:

@@ -70,11 +70,13 @@ function validate() {
 # installation. If the user wishes, the playbooks/customize.yml role is used to
 # change the base installation by rewriting the $SITE_VARS file.
 function customize() {
-  read -r -p "
-Do you wish to customize which services Streisand will install?
-By saying 'no' Streisand will use the settings configured in $SITE_VARS
+#  read -r -p "
+#Do you wish to customize which services Streisand will install?
+#By saying 'no' Streisand will use the settings configured in $SITE_VARS
 
-Press enter to customize your installation: " confirm
+#Press enter to customize your installation: " confirm
+confirm=no
+
   case "$confirm" in
     no) echo; echo "Installing Streisand services specified in $SITE_VARS";;
      *) echo; echo "Confirmed. Customizing Streisand services.";

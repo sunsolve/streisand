@@ -88,7 +88,7 @@
   # keyrings and updating the static repo keys until the build passes again.
   when:
     - not streisand_ci
-    - not fuck_hkps
+    - not true
 
 - name: "Set up a daily cronjob to refresh the Streisand GPG keyring"
   template:

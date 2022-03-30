@@ -29,11 +29,11 @@ server {
 
 # Catch-all server to prevent requests that either change the HOST header
 # or request an invalid domain/subdomain.
-server {
-  listen 80 default_server;
-  server_name _;
-  return 444; # "Connection closed without response"
-}
+#server {
+#  listen 80 default_server;
+#  server_name _;
+#  return 444; # "Connection closed without response"
+#}
 
 # SSL Gateway
 server {

@@ -1,5 +1,5 @@
 ---
-shadowsocks_location: "/etc/shadowsocks-libev"
+shadowsocks_location: "/var/snap/shadowsocks-libev/common/etc/shadowsocks-libev"
 shadowsocks_password_file: "{{ shadowsocks_location }}/shadowsocks-password.txt"
 
 # V2ray-plugin

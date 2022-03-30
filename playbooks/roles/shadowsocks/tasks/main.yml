@@ -32,6 +32,16 @@
     mode: 0755
     state: directory
 
+- name: Create the nginx systemd service directory
+  file:
+    path: /etc/systemd/system/shadowsocks-libev.service.d
+    owner: root
+    # The nobody user in nogroup needs to be able to read the config file
+    group: nogroup
+    # It is safe to make this directory world read only because the password
+    # file and config file are not
+    mode: 0755
+    state: directory
 
 - name: Generate a random Shadowsocks password
   shell: openssl rand -base64 48 > {{ shadowsocks_password_file }}
